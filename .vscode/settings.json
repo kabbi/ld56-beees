@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Beees.sln"
+    "dotnet.defaultSolution": "ld56-beees.sln"
 }
