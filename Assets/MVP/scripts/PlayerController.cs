@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5;
+    public float verticalSpeed = 1;
+    public float gravityFactor = 1;
     public float runSpeed = 5;
     public float jumpForce = 5;
     public float lookRotationDampFactor = 10;
@@ -20,7 +22,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 moveVelocity;
     private Vector2 moveInput;
     private Vector2 lookInput;
-    public float verticalSpeed;
+    private float verticalInput;
 
     enum State
     {
@@ -48,6 +50,11 @@ public class PlayerController : MonoBehaviour
     void OnDisable()
     {
         playerInput.onActionTriggered -= HandleAction;
+    }
+
+    public void SetVerticalInput(float v)
+    {
+        verticalInput = v;
     }
 
     private void HandleAction(InputAction.CallbackContext context)
@@ -79,9 +86,9 @@ public class PlayerController : MonoBehaviour
 
         float speed = runTriggered ? runSpeed : moveSpeed;
         moveVelocity.x = moveDirection.x * speed;
-        if (verticalSpeed != 0)
+        if (verticalInput != 0)
         {
-            moveVelocity.y = verticalSpeed * speed;
+            moveVelocity.y = verticalInput * verticalSpeed;
         }
         moveVelocity.z = moveDirection.z * speed;
     }
@@ -103,7 +110,7 @@ public class PlayerController : MonoBehaviour
     {
         if (moveVelocity.y > Physics.gravity.y)
         {
-            moveVelocity.y += Physics.gravity.y * Time.deltaTime * 0.05f;
+            moveVelocity.y += Physics.gravity.y * Time.deltaTime * gravityFactor;
         }
     }
 

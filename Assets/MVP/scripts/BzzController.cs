@@ -50,12 +50,12 @@ public class BzzController : MonoBehaviour
         if (level > sensitivity && !flapped)
         {
             // Flap();
-            playerController.verticalSpeed = 1;
+            playerController.SetVerticalInput(1);
             flapped = true;
         }
         if (level < sensitivity && flapped)
         {
-            playerController.verticalSpeed = 0;
+            playerController.SetVerticalInput(0);
             flapped = false;
         }
 
