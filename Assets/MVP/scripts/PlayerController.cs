@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 moveVelocity;
     private Vector2 moveInput;
     private Vector2 lookInput;
+    public float verticalSpeed;
 
     enum State
     {
@@ -36,7 +37,7 @@ public class PlayerController : MonoBehaviour
         moveAction = playerInput.currentActionMap.FindAction("Move");
         lookAction = playerInput.currentActionMap.FindAction("Look");
         jumpAction = playerInput.currentActionMap.FindAction("Jump");
-        runAction = playerInput.currentActionMap.FindAction("Run");
+        runAction = playerInput.currentActionMap.FindAction("Sprint");
     }
 
     void OnEnable()
@@ -71,14 +72,17 @@ public class PlayerController : MonoBehaviour
 
     private void CalculateMoveDirection()
     {
-        Vector3 cameraForward = new(ourCamera.forward.x, ourCamera.forward.y, ourCamera.forward.z);
-        Vector3 cameraRight = new(ourCamera.right.x, ourCamera.right.y, ourCamera.right.z);
+        Vector3 cameraForward = new(ourCamera.forward.x, 0, ourCamera.forward.z);
+        Vector3 cameraRight = new(ourCamera.right.x, 0, ourCamera.right.z);
 
         Vector3 moveDirection = cameraForward.normalized * moveInput.y + cameraRight.normalized * moveInput.x;
 
         float speed = runTriggered ? runSpeed : moveSpeed;
         moveVelocity.x = moveDirection.x * speed;
-        moveVelocity.y = moveDirection.y * speed;
+        if (verticalSpeed != 0)
+        {
+            moveVelocity.y = verticalSpeed * speed;
+        }
         moveVelocity.z = moveDirection.z * speed;
     }
 
@@ -99,7 +103,7 @@ public class PlayerController : MonoBehaviour
     {
         if (moveVelocity.y > Physics.gravity.y)
         {
-            moveVelocity.y += Physics.gravity.y * Time.deltaTime;
+            moveVelocity.y += Physics.gravity.y * Time.deltaTime * 0.05f;
         }
     }
 
@@ -143,7 +147,7 @@ public class PlayerController : MonoBehaviour
 
         CalculateMoveDirection();
         FaceMoveDirection();
-        // ApplyGravity();
+        ApplyGravity();
         Move();
     }
 
