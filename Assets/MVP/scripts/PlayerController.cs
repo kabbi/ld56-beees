@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     private InputAction runAction;
     private bool runTriggered;
     private bool jumpTriggered;
+    private bool bonkTriggered;
+    private Vector3 bonkDirection;
     private Vector3 moveVelocity;
     private Vector2 moveInput;
     private Vector2 lookInput;
@@ -77,6 +79,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void Bonk(Vector3 direction)
+    {
+        bonkDirection = direction;
+        bonkTriggered = true;
+    }
+
     private void CalculateMoveDirection()
     {
         Vector3 cameraForward = new(ourCamera.forward.x, 0, ourCamera.forward.z);
@@ -119,6 +127,15 @@ public class PlayerController : MonoBehaviour
         controller.Move(moveVelocity * Time.deltaTime);
     }
 
+    private void ApplyBonk()
+    {
+        if (bonkTriggered)
+        {
+            moveVelocity += bonkDirection;
+            bonkTriggered = false;
+        }
+    }
+
     // private void HandleJumping() {
     //     // Should we wait for velocity to become negative here?
     //     if (!controller.isGrounded) {
@@ -155,6 +172,7 @@ public class PlayerController : MonoBehaviour
         CalculateMoveDirection();
         FaceMoveDirection();
         ApplyGravity();
+        ApplyBonk();
         Move();
     }
 
