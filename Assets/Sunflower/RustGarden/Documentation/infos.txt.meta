@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3cd8fabd94014c74b99939769da00511
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135540
+  packageName: Rust Garden 1
+  packageVersion: 1.0
+  assetPath: Assets/Code4/RustGarden/Documentation/infos.txt
+  uploadId: 284124

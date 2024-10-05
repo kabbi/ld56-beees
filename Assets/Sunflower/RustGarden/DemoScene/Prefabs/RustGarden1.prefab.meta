@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 078060c08ddbd6248a1766c155cdd624
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135540
+  packageName: Rust Garden 1
+  packageVersion: 1.0
+  assetPath: Assets/Code4/RustGarden/DemoScene/Prefabs/RustGarden1.prefab
+  uploadId: 284124

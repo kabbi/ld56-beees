@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5292adcb28fbb6d44add6e20cf77b092
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135540
+  packageName: Rust Garden 1
+  packageVersion: 1.0
+  assetPath: Assets/Code4/RustGarden/DemoScene/Dem Rustgarden1.unity
+  uploadId: 284124
