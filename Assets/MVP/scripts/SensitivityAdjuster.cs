@@ -6,6 +6,9 @@ public class SensitivityAdjuster : MonoBehaviour
     public BzzController bzzer;
     public Slider levelBar;
     public Slider slider;
+    public Image handle;
+    public Color handleColorTriggered;
+    public Color handleColorDefault;
 
     void Start()
     {
@@ -24,5 +27,6 @@ public class SensitivityAdjuster : MonoBehaviour
     void Update()
     {
         levelBar.value = bzzer.lastLevel;
+        handle.color = bzzer.lastLevel > slider.value ? handleColorTriggered : handleColorDefault;
     }
 }

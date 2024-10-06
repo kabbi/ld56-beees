@@ -82,6 +82,10 @@ public class BzzController : MonoBehaviour
 
     void UpdateInput()
     {
+        if (SettingsManager.Instance && SettingsManager.Instance.microphoneUnusable)
+        {
+            return;
+        }
         if (lastLevel > sensitivity && !triggered)
         {
             // Flap();
