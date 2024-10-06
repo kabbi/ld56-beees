@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: aa03ec3c2b141f942a9a78bfb488f4ab
+timeCreated: 1483439474
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 79814
+  packageName: Particle Tutorial SKJ
+  packageVersion: 1.3
+  assetPath: Assets/SKJ Particle Tutorial/Prefab/Basic functions/14.External Force_01.prefab
+  uploadId: 209765

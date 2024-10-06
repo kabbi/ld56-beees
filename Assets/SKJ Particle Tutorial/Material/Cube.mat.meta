@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ef07ba91bf8f02d479878ab575827d5c
+timeCreated: 1483496364
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 79814
+  packageName: Particle Tutorial SKJ
+  packageVersion: 1.3
+  assetPath: Assets/SKJ Particle Tutorial/Material/Cube.mat
+  uploadId: 209765

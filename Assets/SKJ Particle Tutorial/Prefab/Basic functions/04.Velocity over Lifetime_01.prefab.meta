@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 2892759e8c048dc4497542c289a2c6a3
+timeCreated: 1483428756
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 79814
+  packageName: Particle Tutorial SKJ
+  packageVersion: 1.3
+  assetPath: Assets/SKJ Particle Tutorial/Prefab/Basic functions/04.Velocity over
+    Lifetime_01.prefab
+  uploadId: 209765

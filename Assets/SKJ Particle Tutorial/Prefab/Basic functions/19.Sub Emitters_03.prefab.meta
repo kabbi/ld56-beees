@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5ba49cafed9d2c946b05c42d42fff98c
+timeCreated: 1483440234
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 79814
+  packageName: Particle Tutorial SKJ
+  packageVersion: 1.3
+  assetPath: Assets/SKJ Particle Tutorial/Prefab/Basic functions/19.Sub Emitters_03.prefab
+  uploadId: 209765

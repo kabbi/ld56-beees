@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3de74cbd389f9a942b4aecdee6ccdd16
+timeCreated: 1483438764
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 79814
+  packageName: Particle Tutorial SKJ
+  packageVersion: 1.3
+  assetPath: Assets/SKJ Particle Tutorial/Prefab/Basic functions/09.Color by Speed.prefab
+  uploadId: 209765

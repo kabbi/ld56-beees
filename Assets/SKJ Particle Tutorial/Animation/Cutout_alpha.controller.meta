@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a63d26ad5b33fcd43b16ae6746646378
+timeCreated: 1471406408
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 79814
+  packageName: Particle Tutorial SKJ
+  packageVersion: 1.3
+  assetPath: Assets/SKJ Particle Tutorial/Animation/Cutout_alpha.controller
+  uploadId: 209765

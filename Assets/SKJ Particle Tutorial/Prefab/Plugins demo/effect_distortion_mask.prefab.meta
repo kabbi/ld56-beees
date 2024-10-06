@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 41a63e034169271498628fd0e4fba549
+timeCreated: 1481607504
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 79814
+  packageName: Particle Tutorial SKJ
+  packageVersion: 1.3
+  assetPath: Assets/SKJ Particle Tutorial/Prefab/Plugins demo/effect_distortion_mask.prefab
+  uploadId: 209765

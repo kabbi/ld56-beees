@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: af1d2377d1be0d140a990a269b1f23eb
+timeCreated: 1483496500
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 79814
+  packageName: Particle Tutorial SKJ
+  packageVersion: 1.3
+  assetPath: Assets/SKJ Particle Tutorial/Prefab/Advanced operation/01.prefab
+  uploadId: 209765

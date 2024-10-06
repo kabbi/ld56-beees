@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 58329a7545a2df34eb3ca9eee01a21ae
+timeCreated: 1483438620
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 79814
+  packageName: Particle Tutorial SKJ
+  packageVersion: 1.3
+  assetPath: Assets/SKJ Particle Tutorial/Prefab/Basic functions/08.Color over Lifetime.prefab
+  uploadId: 209765

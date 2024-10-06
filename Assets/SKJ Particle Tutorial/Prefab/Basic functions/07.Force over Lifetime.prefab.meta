@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 9078572667201694ea670a275314b480
+timeCreated: 1483438094
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 79814
+  packageName: Particle Tutorial SKJ
+  packageVersion: 1.3
+  assetPath: Assets/SKJ Particle Tutorial/Prefab/Basic functions/07.Force over Lifetime.prefab
+  uploadId: 209765
