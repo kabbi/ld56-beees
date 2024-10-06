@@ -5,6 +5,7 @@ public class FlowerController : MonoBehaviour
 {
     public float pickDelay = 3;
     public GameObject[] itemsToDisable;
+    private bool done;
 
     void OnTriggerEnter(Collider other)
     {
@@ -32,6 +33,12 @@ public class FlowerController : MonoBehaviour
 
     void Pick()
     {
+        if (done)
+        {
+            return;
+        }
+
+        done = true;
         GameManager.Instance.flowersPicked += 1;
         foreach (GameObject item in itemsToDisable)
         {
