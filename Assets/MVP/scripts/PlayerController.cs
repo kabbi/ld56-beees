@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float runSpeed = 5;
     public float jumpForce = 5;
     public float lookRotationDampFactor = 10;
+    public Animator[] animators;
     private State state = State.Moving;
     private PlayerInput playerInput;
     private CharacterController controller;
@@ -144,6 +146,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void UpdateWings()
+    {
+        bool flying = !controller.isGrounded;
+        foreach (var animator in animators)
+        {
+            animator.SetBool("flying", flying);
+        }
+    }
+
     // private void HandleJumping() {
     //     // Should we wait for velocity to become negative here?
     //     if (!controller.isGrounded) {
@@ -179,6 +190,7 @@ public class PlayerController : MonoBehaviour
 
         CalculateMoveDirection();
         FaceMoveDirection();
+        UpdateWings();
         ApplyGravity();
         ApplyBonk();
         Move();

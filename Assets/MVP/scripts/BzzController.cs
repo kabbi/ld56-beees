@@ -4,12 +4,13 @@ using Lomont;
 
 public class BzzController : MonoBehaviour
 {
+    public bool debug;
     private AudioClip microphoneInput;
     private bool microphoneInitialized;
     private PlayerController playerController;
     public float sensitivity;
     private bool flapped;
-    private float lastLevel;
+    public float lastLevel;
     private float lastVariance;
     private float lastZCR;
     private float[] waveData = new float[64];
@@ -115,6 +116,10 @@ public class BzzController : MonoBehaviour
 
     private void OnGUI()
     {
+        if (!debug)
+        {
+            return;
+        }
         GUI.Box(new Rect(10, 10, 200, 10), "");
         GUI.Box(new Rect(10, 10, 200 * lastLevel, 10), "");
         GUI.Box(new Rect(10 + 200 * sensitivity, 10, 2, 10), "");
