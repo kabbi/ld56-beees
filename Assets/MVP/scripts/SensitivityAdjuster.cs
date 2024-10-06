@@ -15,6 +15,10 @@ public class SensitivityAdjuster : MonoBehaviour
     public void OnChange()
     {
         bzzer.sensitivity = slider.value;
+        if (SettingsManager.Instance)
+        {
+            SettingsManager.Instance.sensitivity = slider.value;
+        }
     }
 
     void Update()

@@ -28,6 +28,11 @@ public class BzzController : MonoBehaviour
             microphoneInitialized = true;
         }
 #endif
+
+        if (SettingsManager.Instance)
+        {
+            sensitivity = SettingsManager.Instance.sensitivity;
+        }
     }
 
     void Update()
