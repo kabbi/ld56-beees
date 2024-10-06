@@ -21,15 +21,18 @@ public class BzzController : MonoBehaviour
     {
         fft = new LomontFFT();
         playerController = GetComponent<PlayerController>();
+#if !UNITY_WEBGL
         if (Microphone.devices.Length > 0)
         {
             microphoneInput = Microphone.Start(Microphone.devices[0], true, 999, 44100);
             microphoneInitialized = true;
         }
+#endif
     }
 
     void Update()
     {
+#if !UNITY_WEBGL
         //get mic volume
         int micPosition = Microphone.GetPosition(null) - (waveData.Length + 1); // null means the first microphone
         microphoneInput.GetData(waveData, micPosition);
@@ -62,7 +65,7 @@ public class BzzController : MonoBehaviour
             playerController.SetVerticalInput(0);
             flapped = false;
         }
-
+#endif
     }
 
     private float CalculateVariance(float[] samples)

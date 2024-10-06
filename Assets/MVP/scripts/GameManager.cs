@@ -19,4 +19,12 @@ public class GameManager : MonoBehaviour
         }
         Instance = this;
     }
+
+    public bool IsDone
+    {
+        get
+        {
+            return flowersPicked >= flowersTotal;
+        }
+    }
 }
