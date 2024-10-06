@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.hecomi.umicrophonewebgl": "https://github.com/hecomi/uMicrophoneWebGL.git#upm",
     "com.oddworm.dbgdraw": "https://github.com/pschraut/UnityDbgDraw.git#1.2.0",
     "com.unity.ai.navigation": "2.0.4",
     "com.unity.cinemachine": "3.1.2",

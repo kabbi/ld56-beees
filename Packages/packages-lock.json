@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.hecomi.umicrophonewebgl": {
+      "version": "https://github.com/hecomi/uMicrophoneWebGL.git#upm",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "d137375dc9faee729cd1280bfc5c044c145c3650"
+    },
     "com.oddworm.dbgdraw": {
       "version": "https://github.com/pschraut/UnityDbgDraw.git#1.2.0",
       "depth": 0,
