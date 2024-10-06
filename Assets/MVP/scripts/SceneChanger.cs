@@ -9,4 +9,13 @@ public class SceneChanger : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (!other.GetComponent<PlayerController>())
+        {
+            return;
+        }
+        ChangeScene();
+    }
 }

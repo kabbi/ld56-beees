@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/NotMVP/MainScene.unity
     guid: 0d5713c9104a844d5be91442a2748321
+  - enabled: 1
+    path: Assets/NotMVP/TutorialScene.unity
+    guid: 7c073bd222669407aac1acbb690b4b98
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
