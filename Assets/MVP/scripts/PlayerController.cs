@@ -17,9 +17,11 @@ public class PlayerController : MonoBehaviour
     private InputAction lookAction;
     private InputAction jumpAction;
     private InputAction runAction;
+    private InputAction flyAction;
     private bool runTriggered;
     private bool jumpTriggered;
     private bool bonkTriggered;
+    private bool flyTriggered;
     private Vector3 bonkDirection;
     private Vector3 moveVelocity;
     private Vector2 moveInput;
@@ -42,6 +44,7 @@ public class PlayerController : MonoBehaviour
         lookAction = playerInput.currentActionMap.FindAction("Look");
         jumpAction = playerInput.currentActionMap.FindAction("Jump");
         runAction = playerInput.currentActionMap.FindAction("Sprint");
+        flyAction = playerInput.currentActionMap.FindAction("Fly");
     }
 
     void OnEnable()
@@ -76,6 +79,11 @@ public class PlayerController : MonoBehaviour
         if (context.action == runAction)
         {
             runTriggered = context.ReadValue<float>() > 0;
+        }
+        if (context.action == flyAction)
+        {
+            flyTriggered = context.ReadValue<float>() > 0;
+            verticalInput = context.ReadValue<float>();
         }
     }
 
