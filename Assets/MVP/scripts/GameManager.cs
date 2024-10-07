@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
 
     public int flowersPicked;
     public int flowersTotal;
+    public GameObject[] objectsToActivate;
+    public GameObject[] objectsToDeactivate;
+    private bool done;
 
     void Awake()
     {
@@ -25,6 +28,22 @@ public class GameManager : MonoBehaviour
         get
         {
             return flowersPicked >= flowersTotal;
+        }
+    }
+
+    void Update()
+    {
+        if (flowersPicked >= flowersTotal && !done)
+        {
+            done = true;
+            foreach (GameObject obj in objectsToActivate)
+            {
+                obj.SetActive(true);
+            }
+            foreach (GameObject obj in objectsToDeactivate)
+            {
+                obj.SetActive(false);
+            }
         }
     }
 }
