@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
         {
             runTriggered = context.ReadValue<float>() > 0;
         }
-        if (context.action == flyAction)
+        if (context.action == flyAction && SettingsManager.Instance && SettingsManager.Instance.microphoneUnusable)
         {
             flyTriggered = context.ReadValue<float>() > 0;
             verticalInput = context.ReadValue<float>();

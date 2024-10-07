@@ -1,15 +1,17 @@
 using UnityEngine;
 using System;
 using Lomont;
+using uMicrophoneWebGL;
 
 public class BzzController : MonoBehaviour
 {
     public bool debug;
     private AudioClip microphoneInput;
+    private MicrophoneWebGL microphoneWebGL;
     private bool microphoneInitialized;
     private PlayerController playerController;
     public float sensitivity;
-    private bool flapped;
+    private bool triggered;
     public float lastLevel;
     private float lastVariance;
     private float lastZCR;
@@ -21,6 +23,9 @@ public class BzzController : MonoBehaviour
     {
         fft = new LomontFFT();
         playerController = GetComponent<PlayerController>();
+        microphoneWebGL = GetComponent<MicrophoneWebGL>();
+        microphoneWebGL.dataEvent.AddListener(OnAudioData);
+
 #if !UNITY_WEBGL
         if (Microphone.devices.Length > 0)
         {
@@ -33,6 +38,20 @@ public class BzzController : MonoBehaviour
         {
             sensitivity = SettingsManager.Instance.sensitivity;
         }
+    }
+
+    void OnAudioData(float[] samples)
+    {
+        float levelMax = 0;
+        for (int i = 0; i < samples.Length; i++)
+        {
+            float wavePeak = samples[i] * samples[i];
+            if (levelMax < wavePeak)
+            {
+                levelMax = wavePeak;
+            }
+        }
+        lastLevel = Mathf.Sqrt(Mathf.Sqrt(levelMax));
     }
 
     void Update()
@@ -56,21 +75,28 @@ public class BzzController : MonoBehaviour
                 levelMax = wavePeak;
             }
         }
-        float level = Mathf.Sqrt(Mathf.Sqrt(levelMax));
-        lastLevel = level;
+        lastLevel = Mathf.Sqrt(Mathf.Sqrt(levelMax));
+#endif
+        UpdateInput();
+    }
 
-        if (level > sensitivity && !flapped)
+    void UpdateInput()
+    {
+        if (SettingsManager.Instance && SettingsManager.Instance.microphoneUnusable)
+        {
+            return;
+        }
+        if (lastLevel > sensitivity && !triggered)
         {
             // Flap();
             playerController.SetVerticalInput(1);
-            flapped = true;
+            triggered = true;
         }
-        if (level < sensitivity && flapped)
+        if (lastLevel < sensitivity && triggered)
         {
             playerController.SetVerticalInput(0);
-            flapped = false;
+            triggered = false;
         }
-#endif
     }
 
     private float CalculateVariance(float[] samples)

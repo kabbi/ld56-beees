@@ -4,6 +4,8 @@ public class GameOverTrigger : MonoBehaviour
 {
     public MonoBehaviour[] componentsToDisable;
     public MonoBehaviour[] componentsToEnable;
+    public GameObject[] objectsToActivate;
+    public GameObject[] objectsToDeActivate;
 
     void OnTriggerEnter(Collider other)
     {
@@ -27,6 +29,14 @@ public class GameOverTrigger : MonoBehaviour
         foreach (MonoBehaviour component in componentsToEnable)
         {
             component.enabled = true;
+        }
+        foreach (GameObject gameObject in objectsToActivate)
+        {
+            gameObject.SetActive(true);
+        }
+                foreach (GameObject gameObject in objectsToDeActivate)
+        {
+            gameObject.SetActive(false);
         }
     }
 }
