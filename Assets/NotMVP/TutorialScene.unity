@@ -507,6 +507,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1585339873023398959, guid: 620c02687d02cbf4c91f03fbc7366716, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 1890910595786045333, guid: c81f641663f7c40009f26e0d3d0dd135, type: 3}
+    - target: {fileID: 1585339873023398959, guid: 620c02687d02cbf4c91f03fbc7366716, type: 3}
       propertyPath: m_Convex
       value: 0
       objectReference: {fileID: 0}
